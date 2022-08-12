@@ -13,8 +13,23 @@ let numberOfBlocks = inputNumberOfBlocks.value;
 
 btnCreate.addEventListener('click', ()=>createBlocks())
 btnDestroy.addEventListener('click', ()=>destroyBoxes())
+// перший робочій варіант
+// function createBlocks (numberOfBlocks) {
+//    numberOfBlocks = inputNumberOfBlocks.value;
+//   for (let i = 0; i < numberOfBlocks; i +=1) {
+//     let size = 30;
+//     let divElem =  document.createElement('div');
+//     divElem.classList.add('block');
+//     divElem.style.width = `${size + i * 10}px`;
+//     divElem.style.height = `${size + i * 10}px`;
+//     divElem.style.backgroundColor = `${getRandomHexColor()}`;
+//     idBlock.appendChild(divElem)
+// }
+// }
+// другий варіант
 
 function createBlocks (numberOfBlocks) {
+  let arrayBlock = [];
    numberOfBlocks = inputNumberOfBlocks.value;
   for (let i = 0; i < numberOfBlocks; i +=1) {
     let size = 30;
@@ -23,8 +38,10 @@ function createBlocks (numberOfBlocks) {
     divElem.style.width = `${size + i * 10}px`;
     divElem.style.height = `${size + i * 10}px`;
     divElem.style.backgroundColor = `${getRandomHexColor()}`;
-    idBlock.appendChild(divElem)
+    arrayBlock.push(divElem)
 }
+console.log(arrayBlock);
+arrayBlock.forEach((key)=>idBlock.insertAdjacentHTML("beforeend", key.outerHTML));
 }
 
 function destroyBoxes () {
