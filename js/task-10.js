@@ -28,7 +28,7 @@ function createBlocks (numberOfBlocks) {
 }
 
 function destroyBoxes () {
-  const z = document.querySelectorAll('.block');
-z.forEach((key) => key.remove());
+  const destroyBlocks = document.querySelectorAll('.block');
+  destroyBlocks.forEach((key) => key.remove());
 inputNumberOfBlocks.value = 0;
 }
