@@ -3,7 +3,7 @@ const btnDestroy = document.querySelector(`[data-destroy]`);
 const inputNumberOfBlocks = document.querySelector(`input`);
 const idBlock = document.querySelector(`#boxes`);
 
-console.log(btnCreate, btnDestroy, inputNumberOfBlocks, idBlock)
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
@@ -25,7 +25,9 @@ btnDestroy.addEventListener('click', ()=>destroyBoxes())
 //     divElem.style.backgroundColor = `${getRandomHexColor()}`;
 //     idBlock.appendChild(divElem)
 // }
-// }
+// } 
+
+
 // другий варіант
 
 function createBlocks (numberOfBlocks) {
@@ -40,7 +42,6 @@ function createBlocks (numberOfBlocks) {
     divElem.style.backgroundColor = `${getRandomHexColor()}`;
     arrayBlock.push(divElem)
 }
-console.log(arrayBlock);
 arrayBlock.forEach((key)=>idBlock.insertAdjacentHTML("beforeend", key.outerHTML));
 }
 

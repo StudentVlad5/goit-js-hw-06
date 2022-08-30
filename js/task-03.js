@@ -13,15 +13,13 @@ const images = [
   },
 ];
 
-// Используй массив объектов images для создания элементов <img> вложенных в <li>.
-// Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
-
 const listGalleryElem = document.querySelector('.gallery');
 listGalleryElem.style.display='flex';
 listGalleryElem.style.justifyContent='center';
 listGalleryElem.style.flexWrap='wrap';
 listGalleryElem.style.flexDirection='column';
-console.log(listGalleryElem);
+listGalleryElem.style.gap='10px';
+
 
 
 let arrayGalleryElem = [];
@@ -32,9 +30,8 @@ for (let i = 0; i < images.length; i +=1) {
   imgEL.src = images[i].url;
   imgEL.alt = images[i].alt;
   imgEL.style.width = "200px";
-  console.log(liGalleryElem);
   arrayGalleryElem.push(liGalleryElem);
 }
 
-arrayGalleryElem.forEach((key)=>listGalleryElem.appendChild(key));
+// arrayGalleryElem.forEach((key)=>listGalleryElem.appendChild(key));
 arrayGalleryElem.forEach((key)=>listGalleryElem.insertAdjacentHTML("afterBegin", key.innerHTML));

@@ -19,5 +19,4 @@ function onFormSubmit (event) {
     formData.forEach((value, name)=>
     array[name] = value,
     )
-    console.log(array)
 }
